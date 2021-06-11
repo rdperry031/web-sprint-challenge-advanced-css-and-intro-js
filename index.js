@@ -253,7 +253,7 @@ function get20s(array){
   return farmersOnly;
 }
 
-console.log(get20s(artists));
+
 
 
 
@@ -319,13 +319,19 @@ Use lotsOfArt to do the following:
 For example lotsOfArt(artists); will return ["Amedeo Modigliani", "Rene Magritte", ... "Albrecht Dürer"]*/
 
 function lotsOfArt(array){
-    const  manyPaintings = [];
-  for(let i=0; i<array.length; i++){
-    if(array[i].paintings > 100){
-      manyPaintings.push(array[i].name)
+  // ^^^function designated lotsOfArt that receives an array as a parameter
+     const  manyPaintings = [];
+  // ^^^declares manyPaintings as a new array
+     for(let i=0; i<array.length; i++){
+  //  ^^^loops through all index values in array 
+      if(array[i].paintings > 100){
+  //^^^ finds index values of objects with a 'paintings' key that is paired with a value higher than 100
+       manyPaintings.push(array[i].name)
+ // ^^^ adds those objects to a new array
     }
 }
-return manyPaintings;  
+return manyPaintings;
+  // ^^^ returns the new array containing only artists who painted more than 100 paintings
 }
 
 
