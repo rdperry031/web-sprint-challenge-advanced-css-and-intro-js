@@ -307,10 +307,11 @@ function addArtist(array){
       genre: 'Web Design', 
       nationality: 'American',
       bio:   'lorem ipsum'
-    
+    // adds fictional artist with my name who died this year (how morbid)
     }
   ]
   array.push=newArtist;
+  // adds my dead alter ego to the artists array
 return array  
 }
 
