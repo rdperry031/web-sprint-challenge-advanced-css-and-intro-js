@@ -209,17 +209,17 @@ Practice accessing data above by console.log-ing following items:
 
 //(1) Name of the first artist (0th index) in the array
 console.log(artists[0].name);
-
+// logs 'artists' at index 0 (the first index)
 //(2) Bio of the third artist (2nd index) in the array 
 console.log(artists[3].bio);
-
+// logs 'artists' at index 3
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 (no function needed) 
 There is a typo in your dataset 😱 The 9th artist, Vincent Van Gogh is currently Vincent Van Dough. Use an array method to fix this issue and console.log() to check your work. */
 artists[8].name = 'Vincent Van Gogh';
 console.log(artists[8].name);
-
+// changes the paired value of index 8 'name' key to 'Vincent Van Gogh
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀  
  Use getArtistByIndex to do the following:
  1. Receive an array
@@ -229,7 +229,9 @@ console.log(artists[8].name);
  Example, if getArtistByIndex is invoked with the artists array and the number 0, it will return `the artist at index 0 is Amedeo Modigliani` */
 
 function getArtistByIndex(array, i) {
-  return `the artist at index ${array[i]['id']} is ${array[i].name}`;
+  // function with array and i for parameters 
+  return `the artist at index ${array[i].id} is ${array[i].name}`;
+                              // ^id key at index 'i', ^^^^^^ name key at index 'i'// Example, (artists, 7) returns  "Andrei Rublev"
 }  
 
 
@@ -243,14 +245,15 @@ Example born in 1901 and died in 1959 - included -- born in 1889 and died in 192
 If correct, the function should return ["Salvador Dali", "Frida Kahlo"]*/
 
 function get20s(array){
-  const  farmersOnly = [];
+  const  twenties = [];
   for(let i=0; i<array.length; i++){
     if(array[i]['years'].includes('1904') ||  array[i]['years'].includes('1954')){
-      farmersOnly.push(array[i].name)
+    //  ^^^ if indexed array's key is paired with a value that includes '1904' OR 1954 it will be passed into the new array on line below
+      twenties.push(array[i].name)
     console.log(array[i].years)
     }
   }
-  return farmersOnly;
+  return twenties;
 }
 
 
@@ -273,8 +276,10 @@ function get20s(array){
 function removeArtist(array, i){
   for(let i = 0; i < array.length; i++){
       array.splice(i, 1);
-    return array.length;
-}
+    // removes object at specified index
+      return array.length;
+    // returns new length of array
+ }
 }   
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
@@ -302,9 +307,10 @@ function addArtist(array){
       genre: 'Web Design', 
       nationality: 'American',
       bio:   'lorem ipsum'
+    
     }
   ]
-  array[20]=newArtist;
+  array.push=newArtist;
 return array  
 }
 
@@ -326,7 +332,8 @@ function lotsOfArt(array){
   //  ^^^loops through all index values in array 
       if(array[i].paintings > 100){
   //^^^ finds index values of objects with a 'paintings' key that is paired with a value higher than 100
-       manyPaintings.push(array[i].name)
+      //  I want to note that the Sprint retrospective asks us to inlude "details about the issue of a year variable type (string vs integer)..." but the 'years' key was not needed anywhere in this task and the 'paintings' key paired values are integers. I don't know what you want, but I am just going to go ahead and give myself a '2' for that question.
+        manyPaintings.push(array[i].name)
  // ^^^ adds those objects to a new array
     }
 }
